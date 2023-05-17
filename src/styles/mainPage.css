@@ -1,0 +1,163 @@
+.main-section {
+  padding: 35px 0px;
+  background-color: var(--primary-green);
+}
+
+.main-section__title {
+  margin: 0;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--primary-yellow);
+}
+
+.main-section__subtitle {
+  margin: 0px 0px 25px 0px;
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #FFF;
+}
+
+.main-section__about {
+  margin: 0;
+  min-height: 300px;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: justify;
+  color: #FFF;
+}
+
+.main-section__container {
+  display: flex;
+  gap: 70px;
+}
+
+.main-section__left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  text-align: left;
+}
+
+.main-section__right-container {
+  position: relative;
+  flex: 1;
+  height: 550px;
+}
+
+.aside-img {
+  position: absolute;
+  height: 350px;
+  width: 260px;
+  background-size: cover;
+}
+
+.aside-img:first-child {
+  bottom: 0;
+  background-image: url(./../assets/mainPage/Mario\ and\ Adrian\ B.jpg);
+  background-position: 85%;
+}
+
+.aside-img:nth-child(2) {
+  right: 0;
+  background-image: url(./../assets/mainPage/Mario\ and\ Adrian\ A.jpg);
+  background-position: 90%;
+}
+
+/* Testimonials section */
+
+.testimonials-section {
+  padding: 60px 0px;
+  background-color: var(--background-gray);
+}
+
+.testimonials-section__title {
+  margin: 0;
+  text-align: center;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  color: var(--secondary-dark-gray);
+}
+
+/* Specials section */
+
+.specials-section {
+  padding: 60px 0px;
+  background-color: var(--primary-green);
+}
+
+.specials-section__title {
+  margin: 0;
+  text-align: center;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+}
+
+.specials-section__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.specials-section__online-menu {
+  height: 70px;
+  width: 200px;
+  padding: 20px 13px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--primary-yellow);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.specials-section__online-menu:hover {
+  background-color: var(--secondary-pink);
+}
+
+/* About section */
+
+.about-section {
+  padding: 60px;
+  background-color: var(--background-gray);
+}
+
+.about-section__container {
+  display: flex;
+  gap: 20px;
+}
+
+.about-section__container aside {
+  flex: 1;
+}
+
+.about-section__title {
+  margin: 0;
+  text-align: left;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+}
+
+.about-section__subtitle {
+  margin: 0px 0px 25px 0px;
+  text-align: left;
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.about-section__description {
+  margin: 0;
+  max-width: 310px;
+  text-align: justify;
+  line-height: 150%;
+}
+
+.restaurant-img {
+  width: 100%;
+}

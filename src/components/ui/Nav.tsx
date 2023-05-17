@@ -6,7 +6,7 @@ export const Nav = (): JSX.Element => {
     <nav className="header-nav">
       <ul className="header-nav__list">
         <li className="header-nav__list-item">
-          <Link to='/home' className="header-nav__list-item__link">Home</Link>
+          <Link to='/' className="header-nav__list-item__link">Home</Link>
         </li>
         <li className="header-nav__list-item">
           <Link to='/about' className="header-nav__list-item__link">About</Link>
@@ -18,7 +18,7 @@ export const Nav = (): JSX.Element => {
           <Link to='/reservations' className="header-nav__list-item__link">Reservations</Link>
         </li>
         <li className="header-nav__list-item">
-          <Link to='/order' className="header-nav__list-item__link">Order online</Link>
+          <Link to='/booking' className="header-nav__list-item__link">Order online</Link>
         </li>
         <li className="header-nav__list-item">
           <Link to='/login' className="header-nav__list-item__link">Login</Link>

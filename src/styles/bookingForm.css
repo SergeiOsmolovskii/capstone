@@ -1,0 +1,81 @@
+.booking-form {
+  font-family: 'Karla', sans-serif;
+  font-size: 26px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 60px 0px;
+  max-width: 500px;
+}
+
+.form-container label {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 500px;
+}
+
+.form-container label > input, .form-container label > select {
+  width: 150px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.booking-submit {
+  padding: 20px 13px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--primary-yellow);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking-submit:hover {
+  background-color: var(--secondary-pink);
+}
+
+.form-container__date,
+.form-container__time,
+.form-container__guests,
+.form-container__occasion {
+  height: 65px;
+}
+
+.form-container__date-input,
+.form-container__time-input,
+.form-container__guests-input,
+.form-container__occasion-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container__label::after {
+  content: '*';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  color: red;
+}
+
+.form-container__input,
+.form-container__select {
+  width: 150px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+}
+
+.form-container__error-message {
+  margin: 0px 0px 15px 0px;
+  text-align: left;
+  font-size: 16px;
+  color: red;
+}
+
+
+

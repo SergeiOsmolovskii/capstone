@@ -1,0 +1,29 @@
+.confirmation-notification {
+  min-height: calc(100vh - 104px - 405px);
+  padding: 60px;
+  background-color: var(--secondary-gray);
+}
+
+.confirmation-title {
+  margin: 0;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  color: var(--primary-yellow);
+}
+
+.confirmation-description {
+  font-size: 32px;
+  font-family: 'Markazi Text', serif;
+}
+
+.confirmation-back {
+  padding: 20px 13px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--primary-yellow);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}

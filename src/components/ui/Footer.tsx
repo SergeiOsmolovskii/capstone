@@ -13,11 +13,10 @@ export const Footer = (): JSX.Element => {
         <div className="footer-navigation">
           <div className="footer-navigation__container">
             <h3 className="footer-navigation__title">Doormat Navigation</h3>
-            
             <nav className="footer-nav">
               <ul className="footer-nav__list">
                 <li className="footer-nav__list-item">
-                  <Link to='/home' className="footer-nav__list-item__link">Home</Link>
+                  <Link to='/' className="footer-nav__list-item__link">Home</Link>
                 </li>
                 <li className="footer-nav__list-item">
                   <Link to='/about' className="footer-nav__list-item__link">About</Link>
@@ -29,7 +28,7 @@ export const Footer = (): JSX.Element => {
                   <Link to='/reservations' className="footer-nav__list-item__link">Reservations</Link>
                 </li>
                 <li className="footer-nav__list-item">
-                  <Link to='/order' className="footer-nav__list-item__link">Order online</Link>
+                  <Link to='/booking' className="footer-nav__list-item__link">Order online</Link>
                 </li>
                 <li className="footer-nav__list-item">
                   <Link to='/login' className="footer-nav__list-item__link">Login</Link>

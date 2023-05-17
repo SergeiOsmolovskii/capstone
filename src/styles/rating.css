@@ -1,0 +1,16 @@
+.rating {
+  position: relative;
+}
+
+.rating img {
+  width: 50px;
+}
+
+.rating-total {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Markazi Text', serif;
+  font-size: 36px;
+}

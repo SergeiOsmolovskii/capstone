@@ -1,0 +1,26 @@
+.testimonials {
+  display: flex;
+  gap: 20px;
+}
+
+.testimonial {
+  width: 200px;
+  padding: 40px 20px;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-user-name {
+  margin: 0;
+}
+
+.testimonial-user__img {
+  width: 100%;
+}
+
+.testimonial-uesr__text {
+  max-height: 50px;
+}
