@@ -20,23 +20,25 @@ export const BookingForm = (): JSX.Element => {
   });
 
   const [times, setTimes] = useState([""]);
-
-  let freeTimes = times.map(value => {
-    return (<option key={value} value={value}>{value}</option>)
-  });
+  const [freeTimes, setFreeTimes] = useState<JSX.Element[]>([]);
 
   const occasion = Object.values(OCCASIONS).map(value => {
     return (<option key={value} value={value}>{value}</option>)
   });
 
+
   useEffect(() => {
-    freeTimes = times.map(value => {
-      return (
-        <option key={value} value={value}>{value}</option>
-      );
-    });
+    if (times !== undefined) {
+      const freeTimes = times.map(value => {
+        return (
+          <option key={value} value={value}>{value}</option>
+        );
+      });
+      setFreeTimes(freeTimes);
+    }
   }, [times]);
 
+  
   const navigate = useNavigate();
 
   const formik = useFormik({
@@ -73,6 +75,21 @@ export const BookingForm = (): JSX.Element => {
     setTimes(freeTimes);
   };
 
+  const getCurrentDate = () => {
+    const today = new Date();
+    let month = (today.getMonth() + 1).toString();
+    let day = today.getDate().toString();
+
+    if (month.length === 1) {
+      month = '0' + month;
+    }
+
+    if (day.length === 1) {
+      day = '0' + day;
+    }
+    return `${today.getFullYear()}-${month}-${day}`;
+  }
+
   return (
     <form onSubmit={formik.handleSubmit} className="booking-form">
       <div className="container form-container">
@@ -85,9 +102,9 @@ export const BookingForm = (): JSX.Element => {
               id="date"
               onChange={handleDateChange}
               value={formik.values.date!}
+              min={getCurrentDate()}
               required
-            >
-            </input>
+            />
           </div>
           <p className="form-container__error-message">{formik.errors.date}</p>
         </div>
@@ -111,7 +128,7 @@ export const BookingForm = (): JSX.Element => {
 
         <div className="form-container__guests">
           <div className="form-container__guests-input">
-            <label className="form-container__label" htmlFor="guestsCount">Number of guest </label>
+            <label className="form-container__label" htmlFor="guestsCount">Number of guests</label>
             <input
               className="form-container__input"
               type="number"
@@ -122,8 +139,7 @@ export const BookingForm = (): JSX.Element => {
               onChange={formik.handleChange}
               value={formik.values.guestsCount ?? ''}
               required
-            >
-            </input>
+            />
           </div>
           <p className="form-container__error-message">{formik.errors.guestsCount}</p>
         </div>
@@ -142,8 +158,9 @@ export const BookingForm = (): JSX.Element => {
               {occasion}
             </select>
           </div>
+          <p className="form-container__error-message">{formik.errors.occasion}</p>
         </div>
-        <input className="booking-submit" type="submit" value="Make Your reservation"></input>
+        <input disabled={!formik.isValid} className="booking-submit" type="submit" value="Make Your reservation" />
       </div>
     </form>
   );
