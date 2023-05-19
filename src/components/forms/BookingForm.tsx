@@ -15,9 +15,12 @@ export const BookingForm = (): JSX.Element => {
     occasion: null,
   };
 
+
+  
   const [bookingFormData, setBookingFormData] = useState<IBookingForm>({
     ...initialValues
   });
+  
 
   const [times, setTimes] = useState([""]);
   const [freeTimes, setFreeTimes] = useState<JSX.Element[]>([]);
@@ -68,10 +71,10 @@ export const BookingForm = (): JSX.Element => {
     })
   });
 
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleDateChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     formik.handleChange(e);
     const date = new Date(e.target.value);
-    const freeTimes = fetchAPI(date);
+    const freeTimes = await fetchAPI(date);
     setTimes(freeTimes);
   };
 
