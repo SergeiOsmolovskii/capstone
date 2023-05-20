@@ -102,6 +102,7 @@ export const BookingForm = (): JSX.Element => {
               value={formik.values.date!}
               min={getCurrentDate()}
               required
+              aria-label="Date"
             />
           </div>
           <p className="form-container__error-message">{formik.errors.date}</p>
@@ -116,6 +117,7 @@ export const BookingForm = (): JSX.Element => {
               onChange={formik.handleChange}
               value={formik.values.time ?? ''}
               required
+              aria-label="Time"
             >
               <option value="" disabled>Time</option>
               {freeTimes}
@@ -137,6 +139,7 @@ export const BookingForm = (): JSX.Element => {
               onChange={formik.handleChange}
               value={formik.values.guestsCount ?? ''}
               required
+              aria-label="Number of guests"
             />
           </div>
           <p className="form-container__error-message">{formik.errors.guestsCount}</p>
@@ -151,6 +154,7 @@ export const BookingForm = (): JSX.Element => {
               onChange={formik.handleChange}
               value={formik.values.occasion ?? ''}
               required
+              aria-label="Occasion"
             >
               <option value="" disabled>Occasion</option>
               {occasion}
@@ -158,7 +162,14 @@ export const BookingForm = (): JSX.Element => {
           </div>
           <p className="form-container__error-message">{formik.errors.occasion}</p>
         </div>
-        <input disabled={!formik.isValid} className="booking-submit" type="submit" value="Make Your reservation" />
+        <input
+          aria-label="On Click"
+          role="button"
+          disabled={!formik.isValid}
+          className="booking-submit"
+          type="submit"
+          value="Make Your reservation"
+        />
       </div>
     </form>
   );
