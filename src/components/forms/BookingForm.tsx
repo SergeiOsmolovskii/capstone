@@ -15,12 +15,9 @@ export const BookingForm = (): JSX.Element => {
     occasion: null,
   };
 
-
-  
   const [bookingFormData, setBookingFormData] = useState<IBookingForm>({
     ...initialValues
   });
-  
 
   const [times, setTimes] = useState([""]);
   const [freeTimes, setFreeTimes] = useState<JSX.Element[]>([]);
@@ -28,7 +25,6 @@ export const BookingForm = (): JSX.Element => {
   const occasion = Object.values(OCCASIONS).map(value => {
     return (<option key={value} value={value}>{value}</option>)
   });
-
 
   useEffect(() => {
     if (times !== undefined) {
@@ -41,8 +37,22 @@ export const BookingForm = (): JSX.Element => {
     }
   }, [times]);
 
-  
   const navigate = useNavigate();
+
+  const getCurrentDate = () => {
+    const today = new Date();
+    let month = (today.getMonth() + 1).toString();
+    let day = today.getDate().toString();
+
+    if (month.length === 1) {
+      month = '0' + month;
+    }
+
+    if (day.length === 1) {
+      day = '0' + day;
+    }
+    return `${today.getFullYear()}-${month}-${day}`;
+  }
 
   const formik = useFormik({
     initialValues,
@@ -64,7 +74,7 @@ export const BookingForm = (): JSX.Element => {
       }
     },
     validationSchema: Yup.object().shape({
-      date: Yup.string().required("Select Date"),
+      date: Yup.date().min(getCurrentDate()).required("Select Date"),
       time: Yup.string().required("Select time"),
       guestsCount: Yup.number().required().required("Select guests count").min(1).max(10),
       occasion: Yup.string().required("Select occasion")
@@ -77,21 +87,6 @@ export const BookingForm = (): JSX.Element => {
     const freeTimes = await fetchAPI(date);
     setTimes(freeTimes);
   };
-
-  const getCurrentDate = () => {
-    const today = new Date();
-    let month = (today.getMonth() + 1).toString();
-    let day = today.getDate().toString();
-
-    if (month.length === 1) {
-      month = '0' + month;
-    }
-
-    if (day.length === 1) {
-      day = '0' + day;
-    }
-    return `${today.getFullYear()}-${month}-${day}`;
-  }
 
   return (
     <form onSubmit={formik.handleSubmit} className="booking-form">
